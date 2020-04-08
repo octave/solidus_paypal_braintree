@@ -31,6 +31,11 @@ module SolidusPaypalBraintree
     def imported
       false
     end
+    
+    # Alias for proper rendering within Solidus < 2.6 API views
+    def name
+      payment_type
+    end
 
     def actions
       %w[capture void credit]
