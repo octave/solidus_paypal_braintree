@@ -2,7 +2,6 @@
 
 module SolidusPaypalBraintree
   module BraintreeCheckoutHelper
-
     def braintree_3ds_options_for(order)
       ship_address = order.ship_address
       bill_address = order.bill_address
@@ -40,5 +39,8 @@ module SolidusPaypalBraintree
       }
     end
 
+    def paypal_button_preference(key, store:)
+      store.braintree_configuration.preferences[key]
+    end
   end
 end
